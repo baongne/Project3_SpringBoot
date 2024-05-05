@@ -1,5 +1,9 @@
 package com.example.project3.models;
 
+/**
+ *
+ * @author Huu Quoc Bao
+ */
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
