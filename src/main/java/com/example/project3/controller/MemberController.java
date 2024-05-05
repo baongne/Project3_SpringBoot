@@ -24,11 +24,18 @@ public class MemberController {
         this.memberService = memberService;
     }
 
+    @GetMapping("/index")
+    public String index(Model model) {
+        model.addAttribute("members", memberService.getAllMember());
+        return "login/login";
+    }
+
     @GetMapping("/login")
     public String login(Model model) {
         model.addAttribute("members", memberService.getAllMember());
         return "login";
     }
+
     @GetMapping("/register")
     public String register(Model model) {
         model.addAttribute("members", memberService.getAllMember());
@@ -50,18 +57,18 @@ public class MemberController {
             if (memberService.getPasswordByMaTV(ma) != null) {
                 // gửi maillllll
                 emailService.sendSimpleMessage(memberService.getPasswordByMaTV(ma).getEmail(),
-                                                 "Cấp lại password",
-                                                  "Password của " + ma + " là "+memberService.getPasswordByMaTV(ma).getPassword());
+                        "Cấp lại password",
+                        "Password của " + ma + " là " + memberService.getPasswordByMaTV(ma).getPassword());
                 model.addAttribute("message",
-                                 "đã gửi mail vui lòng check mail");
+                        "đã gửi mail vui lòng check mail");
             } else {
                 model.addAttribute("message",
-                                     "bạn nhập sai mã thành viên");
+                        "bạn nhập sai mã thành viên");
             }
         } else {
             // Nếu không hợp lệ, truyền thông báo lỗi vào model để hiển thị
-            model.addAttribute("message", 
-                                                matv);
+            model.addAttribute("message",
+                    matv);
         }
         // Trả về tên của trang HTML hiện tại
         return "newform";
