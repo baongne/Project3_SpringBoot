@@ -12,7 +12,7 @@ import java.util.List;
 
 /**
  *
- * @author Huu Qoc Bao
+ * @author Huu Quoc Bao
  */
 @Repository
 public interface ThongTinSDRepository extends JpaRepository<ThongTinSD, Integer> {

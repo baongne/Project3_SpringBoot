@@ -6,7 +6,7 @@ package com.example.project3.models;
 
 /**
  *
- * @author LENOVO
+ * @author Huu Quoc Bao
  */
 import jakarta.persistence.*;
 

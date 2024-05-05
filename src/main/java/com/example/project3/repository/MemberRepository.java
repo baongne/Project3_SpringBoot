@@ -1,4 +1,8 @@
 package com.example.project3.repository;
+/**
+ *
+ * @author Huu Quoc Bao
+ */
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
